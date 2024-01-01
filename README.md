@@ -1,13 +1,15 @@
 # Learning react with sleact
 
-### BackEnd
+### BackEnd - Port 3095
 ```
 $ cd /back
 $ npm install
 $ npm run dev
 ```
 
-### FrontEnd
+### FrontEnd - Port 3090
 ```
-$ 
+$ cd /alecture
+$ npm install
+$ npm run dev
 ```

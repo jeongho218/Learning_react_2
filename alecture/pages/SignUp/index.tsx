@@ -1,21 +1,24 @@
 import React, { useCallback, useState } from 'react';
 import { Form, Label, Input, LinkContainer, Button, Header, Error } from './styles';
+import useInput from '@hooks/useInput';
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordCheck, setPasswordCheck] = useState('');
+  const [email, onChangeEmail] = useInput('');
+  const [nickname, onChangeNickname] = useInput('');
+  const [password, , setPassword] = useInput('');
+  const [passwordCheck, , setPasswordCheck] = useInput('');
   const [mismatchError, setMisMatchError] = useState(false);
   // setPassword와 setPasswordCheck의 입력값이 다르면 이 값이 true가 된다.
 
-  const onChangeEmail = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }, []);
+  // 상단에서 커스텀 훅을 사용하여 onChangeEmail을 선언하였으므로 아래 내용은 삭제 가능하다.
+  // const onChangeEmail = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setEmail(e.target.value);
+  // }, []);
 
-  const onChangeNickname = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(e.target.value);
-  }, []);
+  // 상단에서 커스텀 훅을 사용하여 onChangeNickname을 선언하였으므로 아래 내용은 삭제 가능하다.
+  // const onChangeNickname = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setNickname(e.target.value);
+  // }, []);
 
   const onChangePassword = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
